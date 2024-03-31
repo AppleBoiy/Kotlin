@@ -1,4 +1,4 @@
-package dynamic_programming
+package dynamicProgramming
 
 import org.junit.Test
 

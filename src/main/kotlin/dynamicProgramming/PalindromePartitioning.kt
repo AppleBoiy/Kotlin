@@ -1,4 +1,4 @@
-package dynamic_programming
+package dynamicProgramming
 
 /**
  * Palindrome Partitioning Algorithm
