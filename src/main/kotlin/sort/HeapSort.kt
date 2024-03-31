@@ -61,4 +61,3 @@ private fun <T : Comparable<T>> transformMaxHeapToSortedArray(array: Array<T>) {
         maxheapify(array, i, 0)
     }
 }
-
