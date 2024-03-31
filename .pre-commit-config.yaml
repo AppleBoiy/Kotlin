@@ -2,8 +2,16 @@
 # @see http://pre-commit.com/
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: main
+    rev: v4.5.0
     hooks:
       - id: check-yaml
         files: \.(yaml|yml)$
       - id: end-of-file-fixer
+
+#  - repo: https://github.com/AppleBoiy/Kotlin.git
+#    rev: HEAD
+#    hooks:
+#      - id: mvn-verify # it does not accept arguments
+#      - id: ktlint
+#        args:
+#          - --color

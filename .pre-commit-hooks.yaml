@@ -28,3 +28,10 @@
   description: Runs any checks on results of integration tests to ensure quality criteria are met
   entry: ./scripts/mvn.sh clean verify
   language: script
+
+- id: detekt
+  name: detekt check
+  description: Runs `detekt` on modified .kt files.
+  language: script
+  entry: ./scripts/detekt.sh
+  files: \.kt
