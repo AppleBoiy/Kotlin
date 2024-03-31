@@ -3,8 +3,6 @@
 ## Src
   * Main
     * Kotlin
-      * Dynamic Programming
-        * [Palindromepartitioning](https://github.com/TheAlgorithms/Kotlin/blob/master/src/main/kotlin/dynamic_programming/PalindromePartitioning.kt)
       * Dynamicprogramming
         * [Assemblylinescheduling](https://github.com/TheAlgorithms/Kotlin/blob/master/src/main/kotlin/dynamicProgramming/AssemblyLineScheduling.kt)
         * [Editdistance](https://github.com/TheAlgorithms/Kotlin/blob/master/src/main/kotlin/dynamicProgramming/EditDistance.kt)
@@ -12,6 +10,7 @@
         * [Isprime](https://github.com/TheAlgorithms/Kotlin/blob/master/src/main/kotlin/dynamicProgramming/isPrime.kt)
         * [Lcs](https://github.com/TheAlgorithms/Kotlin/blob/master/src/main/kotlin/dynamicProgramming/LCS.kt)
         * [Matrixchainmultiplication](https://github.com/TheAlgorithms/Kotlin/blob/master/src/main/kotlin/dynamicProgramming/MatrixChainMultiplication.kt)
+        * [Palindromepartitioning](https://github.com/TheAlgorithms/Kotlin/blob/master/src/main/kotlin/dynamicProgramming/PalindromePartitioning.kt)
         * [Rodcuttingproblem](https://github.com/TheAlgorithms/Kotlin/blob/master/src/main/kotlin/dynamicProgramming/RodCuttingProblem.kt)
         * [Unboundedknapsack](https://github.com/TheAlgorithms/Kotlin/blob/master/src/main/kotlin/dynamicProgramming/UnboundedKnapsack.kt)
         * [Weightedjobscheduling](https://github.com/TheAlgorithms/Kotlin/blob/master/src/main/kotlin/dynamicProgramming/WeightedJobScheduling.kt)
@@ -38,8 +37,6 @@
         * [Quicksort](https://github.com/TheAlgorithms/Kotlin/blob/master/src/main/kotlin/sort/QuickSort.kt)
         * [Selectionsort](https://github.com/TheAlgorithms/Kotlin/blob/master/src/main/kotlin/sort/SelectionSort.kt)
   * Test
-      * Dynamic Programming
-        * [Palindromepartitioningtest](https://github.com/TheAlgorithms/Kotlin/blob/master/src/test/kotlin/dynamic_programming/PalindromePartitioningTest.kt)
       * Dynamicprogramming
         * [Assemblylineschedulingtest](https://github.com/TheAlgorithms/Kotlin/blob/master/src/test/kotlin/dynamicProgramming/AssemblyLineSchedulingTest.kt)
         * [Editdistancetest](https://github.com/TheAlgorithms/Kotlin/blob/master/src/test/kotlin/dynamicProgramming/EditDistanceTest.kt)
@@ -47,6 +44,7 @@
         * [Isprime](https://github.com/TheAlgorithms/Kotlin/blob/master/src/test/kotlin/dynamicProgramming/isPrime.kt)
         * [Lcstest](https://github.com/TheAlgorithms/Kotlin/blob/master/src/test/kotlin/dynamicProgramming/LCSTest.kt)
         * [Matrixchainmultiplicationtest](https://github.com/TheAlgorithms/Kotlin/blob/master/src/test/kotlin/dynamicProgramming/MatrixChainMultiplicationTest.kt)
+        * [Palindromepartitioningtest](https://github.com/TheAlgorithms/Kotlin/blob/master/src/test/kotlin/dynamicProgramming/PalindromePartitioningTest.kt)
         * [Rodcuttingproblemtest](https://github.com/TheAlgorithms/Kotlin/blob/master/src/test/kotlin/dynamicProgramming/RodCuttingProblemTest.kt)
         * [Unboundedknapsacktest](https://github.com/TheAlgorithms/Kotlin/blob/master/src/test/kotlin/dynamicProgramming/UnboundedKnapsackTest.kt)
         * [Weightedjobschedulingtest](https://github.com/TheAlgorithms/Kotlin/blob/master/src/test/kotlin/dynamicProgramming/WeightedJobSchedulingTest.kt)
