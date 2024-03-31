@@ -1,6 +1,5 @@
 package math
 
-
 /**
  * Calculate the average of a list of Double
  *
@@ -21,7 +20,7 @@ fun average(numbers: Array<Double>): Double {
  * @param numbers array to store numbers
  * @return average of given numbers
  */
-fun average(numbers: Array<Int>) : Int {
+fun average(numbers: Array<Int>): Int {
     var sum = 0
     for (number in numbers) {
         sum += number

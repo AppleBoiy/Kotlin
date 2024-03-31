@@ -1,9 +1,8 @@
 package dynamicProgramming
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class LCSTest {
-
     @Test
     fun testForBasicCases() {
         assert(lcs("apple", "orange") == 2)

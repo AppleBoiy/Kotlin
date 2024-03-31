@@ -1,6 +1,6 @@
 package dynamicProgramming
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class UnboundedKnapsackTest {
     @Test

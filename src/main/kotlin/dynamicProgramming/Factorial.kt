@@ -1,6 +1,9 @@
 package dynamicProgramming
 
-tailrec fun factorial(n: Int, accumulator: Int = 1): Int {
+tailrec fun factorial(
+    n: Int,
+    accumulator: Int = 1
+): Int {
     if (n == 0) {
         return accumulator
     }

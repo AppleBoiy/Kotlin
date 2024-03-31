@@ -1,9 +1,8 @@
 package dynamicProgramming
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 internal class FactorialTest {
-
     @Test
     fun testFactorial1() {
         assert(factorial(0) == 1)

@@ -1,7 +1,7 @@
 package dynamicProgramming
 
-import java.util.Comparator
 import java.util.Collections
+import java.util.Comparator
 import kotlin.math.max
 
 /* This algorithm is Weighted Job Scheduling
@@ -12,7 +12,10 @@ import kotlin.math.max
 
 class Job(var start: Int, var finish: Int, var profit: Int)
 
-fun findLastNonConflictingJob(jobs: List<Job>, n: Int): Int {
+fun findLastNonConflictingJob(
+    jobs: List<Job>,
+    n: Int
+): Int {
     for (i in n - 1 downTo 0) {
         if (jobs[i].finish <= jobs[n].start) {
             return i

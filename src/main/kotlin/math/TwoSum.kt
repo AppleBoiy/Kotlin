@@ -1,4 +1,5 @@
 package math
+
 /**
  * Approach 1: Brute Force
  *
@@ -12,7 +13,10 @@ package math
  * @param target Integer target.
  * @return Indices of the two numbers such that they add up to target.
  */
-fun twoSum(nums: IntArray, target: Int): IntArray{
+fun twoSum(
+    nums: IntArray,
+    target: Int
+): IntArray {
     for (index1 in nums.indices) {
         val startIndex = index1 + 1
         for (index2 in startIndex..nums.lastIndex) {
@@ -21,6 +25,5 @@ fun twoSum(nums: IntArray, target: Int): IntArray{
             }
         }
     }
-    return intArrayOf(0,1)
-
+    return intArrayOf(0, 1)
 }

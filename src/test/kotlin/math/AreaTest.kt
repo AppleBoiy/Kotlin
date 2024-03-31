@@ -1,7 +1,8 @@
 package math
 
-import org.junit.Test
-import java.lang.IllegalArgumentException
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.function.Executable
+import kotlin.test.assertFailsWith
 
 class AreaTest {
     @Test
@@ -16,19 +17,28 @@ class AreaTest {
     @Test
     fun testAreaOfATriangle() = assert(areaOfATriangle(5.0, 10.0) == 25.0)
 
-    @Test(expected = IllegalArgumentException::class)
+    @Test
     fun testAreaWithNegatives() {
-        areaOfARectangle(-1.0, 0.0)
-        areaOfASquare(-1.0)
-        areaOfACircle(-1.0)
-        areaOfATriangle(-1.0, 1.0)
+        val ex1 = Executable { areaOfARectangle(-1.0, 1.0) }
+        val ex2 = Executable { areaOfASquare(-1.0) }
+        val ex3 = Executable { areaOfACircle(-1.0) }
+        val ex4 = Executable { areaOfATriangle(-1.0, 1.0) }
+
+        assertFailsWith<IllegalArgumentException> {ex1.execute()}
+        assertFailsWith<IllegalArgumentException> {ex2.execute()}
+        assertFailsWith<IllegalArgumentException> {ex3.execute()}
+        assertFailsWith<IllegalArgumentException> {ex4.execute()}
     }
 
-    @Test(expected = IllegalArgumentException::class)
+    @Test
     fun testAreaWithZeros() {
-        areaOfARectangle(0.0, 0.0)
-        areaOfASquare(0.0)
-        areaOfACircle(0.0)
-        areaOfATriangle(0.0, 1.0)
+        assertFailsWith<IllegalArgumentException> {
+            areaOfARectangle(0.0, 1.0)
+            areaOfARectangle(1.0, 0.0)
+            areaOfARectangle(0.0, 0.0)
+            areaOfASquare(0.0)
+            areaOfACircle(0.0)
+            areaOfATriangle(0.0, 1.0)
+        }
     }
 }

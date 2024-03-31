@@ -1,10 +1,9 @@
 package sort
 
-import org.junit.Assert.assertArrayEquals
-import org.junit.Test
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 
 class SelectionSortTest {
-
     @Test
     fun testSelectionSort1() {
         val array = arrayOf(4, 3, 2, 8, 1)

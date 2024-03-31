@@ -11,14 +11,17 @@ package dynamicProgramming
  *
  * */
 
-
 /**
  * @param String is the string to be checked
  * @param Int is the starting index of the string in consideration
  * @param Int is the ending index of the string in consideration
  * @return whether string is a palindrome or not
  **/
-fun isPalindrome(string: String, i: Int, j: Int): Boolean {
+fun isPalindrome(
+    string: String,
+    i: Int,
+    j: Int
+): Boolean {
     for (l in 0..(j - i) / 2) {
         if (string[l + i] != string[j - l]) {
             return false
@@ -27,14 +30,17 @@ fun isPalindrome(string: String, i: Int, j: Int): Boolean {
     return true
 }
 
-
 /**
  * @param String is the string to be checked
  * @param Int is the starting index of the string in consideration
  * @param Int is the ending index of the string in consideration
  * @return minimum number of partitions required
  **/
-fun palindromePartition(string: String, i: Int, j: Int): Int {
+fun palindromePartition(
+    string: String,
+    i: Int,
+    j: Int
+): Int {
     if (i >= j) {
         return 0
     }
@@ -55,12 +61,10 @@ fun palindromePartition(string: String, i: Int, j: Int): Int {
     return dp[i][j]
 }
 
-
 /**
  * memoization table
  **/
 lateinit var dp: Array<Array<Int>>
-
 
 /**
  * @param String the string on which algorithm is to be operated

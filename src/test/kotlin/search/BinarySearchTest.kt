@@ -1,9 +1,8 @@
 package search
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class BinarySearchTest {
-
     @Test
     fun testBinarySearch1() {
         val array = arrayOf(1, 2, 4, 8, 16)

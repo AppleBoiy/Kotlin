@@ -35,8 +35,13 @@ fun <T : Comparable<T>> bubbleSort(array: Array<T>) {
  * @param idx2 Index of second element
  * Swaps the element at two indexes
  **/
-fun <T : Comparable<T>> swapElements(array: Array<T>, idx1: Int, idx2: Int) {
-    array[idx1] = array[idx2].also {
-        array[idx2] = array[idx1]
-    }
+fun <T : Comparable<T>> swapElements(
+    array: Array<T>,
+    idx1: Int,
+    idx2: Int
+) {
+    array[idx1] =
+        array[idx2].also {
+            array[idx2] = array[idx1]
+        }
 }

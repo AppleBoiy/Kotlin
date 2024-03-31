@@ -11,8 +11,11 @@ package sort
  * Average performance      	O(n log n)
  * Worst-case space complexity	O(n)
  */
-fun <T : Comparable<T>> mergeSort(array: Array<T>, start: Int, end: Int) {
-
+fun <T : Comparable<T>> mergeSort(
+    array: Array<T>,
+    start: Int,
+    end: Int
+) {
     val temp = arrayOfNulls<Comparable<*>>(array.size) as Array<T>
 
     if (start < end) {
@@ -31,8 +34,13 @@ fun <T : Comparable<T>> mergeSort(array: Array<T>, start: Int, end: Int) {
  * @param mid Middle index of the array
  * @param end Ending index of the array
  */
-fun <T : Comparable<T>> merge(array: Array<T>, temp: Array<T>, start: Int, mid: Int, end: Int) {
-
+fun <T : Comparable<T>> merge(
+    array: Array<T>,
+    temp: Array<T>,
+    start: Int,
+    mid: Int,
+    end: Int
+) {
     System.arraycopy(array, start, temp, start, end - start + 1)
 
     var i = start

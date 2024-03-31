@@ -1,10 +1,9 @@
 package sort
 
-import org.junit.Assert.assertArrayEquals
-import org.junit.Test
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.Assertions.assertArrayEquals
 
 class HeapSortTest {
-
     @Test
     fun `sort array of integers`() {
         val array = arrayOf(4, 3, 2, 8, 1)
@@ -25,5 +24,4 @@ class HeapSortTest {
         heapSort(array)
         assertArrayEquals(array, arrayOf('A', 'B', 'C', 'D', 'E'))
     }
-
 }

@@ -12,12 +12,11 @@ package sort
  * Worst-case space complexity	O(1)
  **/
 
-fun <T : Comparable<T>>  oddEvenSort(array: Array<T>) {
+fun <T : Comparable<T>> oddEvenSort(array: Array<T>) {
     var isSorted = false
     while (!isSorted) {
         isSorted = true
-        var temp : Comparable<T>
-
+        var temp: Comparable<T>
 
         var i = 1
         while (i <= array.size - 2) {

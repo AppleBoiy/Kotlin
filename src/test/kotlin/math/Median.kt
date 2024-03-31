@@ -1,7 +1,7 @@
 package math
 
-import math.median
-import org.junit.Test
+import org.junit.jupiter.api.Test
+
 
 class Median {
     @Test
@@ -18,7 +18,7 @@ class Median {
 
     @Test
     fun testMedianWithNegatives() {
-        val array = intArrayOf( 2, 3, 4, -2, -8, -3)
+        val array = intArrayOf(2, 3, 4, -2, -8, -3)
         assert(median(array) == 0.0)
     }
 }

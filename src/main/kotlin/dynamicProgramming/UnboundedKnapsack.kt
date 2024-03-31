@@ -8,8 +8,12 @@ import kotlin.math.max
  * @return Maximum value with repetition of items that can be obtained
  */
 
-fun unboundedKnapsack(W: Int, wt: IntArray, v: IntArray, n: Int): Int {
-
+fun unboundedKnapsack(
+    W: Int,
+    wt: IntArray,
+    v: IntArray,
+    n: Int
+): Int {
     if (W < 0) return 0
 
     val dp = IntArray(W + 1)

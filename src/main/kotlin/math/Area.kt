@@ -10,7 +10,10 @@ import kotlin.math.pow
  * @param width width of rectangle
  * @return area of given rectangle
  */
-fun areaOfARectangle(length: Double, width: Double) =  when {
+fun areaOfARectangle(
+    length: Double,
+    width: Double
+) = when {
     length > 0 && width > 0 -> length * width
     else -> throw IllegalArgumentException("Length and Width must be positive")
 }
@@ -34,11 +37,13 @@ fun areaOfASquare(sideLength: Double) =
  * @param height height of triangle
  * @return area of given triangle
  */
-fun areaOfATriangle(base: Double, height: Double) =
-    when {
-        base > 0 && height > 0 -> base * height / 2
-        else -> throw IllegalArgumentException("Base and Height must be positive")
-    }
+fun areaOfATriangle(
+    base: Double,
+    height: Double
+) = when {
+    base > 0 && height > 0 -> base * height / 2
+    else -> throw IllegalArgumentException("Base and Height must be positive")
+}
 
 /**
  * Calculate the area of a circle

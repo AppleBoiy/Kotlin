@@ -8,10 +8,9 @@ repos:
         files: \.(yaml|yml)$
       - id: end-of-file-fixer
 
-#  - repo: https://github.com/AppleBoiy/Kotlin.git
-#    rev: HEAD
-#    hooks:
-#      - id: mvn-verify # it does not accept arguments
-#      - id: ktlint
-#        args:
-#          - --color
+  - repo: https://github.com/AppleBoiy/Kotlin.git
+    rev: dfb107fb742b3b1a766556ddffbc0fec4a41ba79
+    hooks:
+      - id: mvn-verify # it does not accept arguments
+      - id: mvn-compile
+      - id: mvn-test # it does not accept arguments

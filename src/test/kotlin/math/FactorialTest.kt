@@ -1,10 +1,10 @@
-package mathematics
+package math
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 import java.security.InvalidParameterException
 
 class FactorialTest {
-
     @Test
     fun testFactorialNormal() {
         val input = 6L
@@ -12,10 +12,12 @@ class FactorialTest {
         assert(getFactorial(input) == expectedFactorial)
     }
 
-    @Test(expected = InvalidParameterException::class)
+    @Test
     fun testFactorialOfNegativeNumber() {
-        val input = -1L
-        getFactorial(input)
+        assertThrows<InvalidParameterException> {
+            val input = -1L
+            getFactorial(input)
+        }
     }
 
     @Test
@@ -24,5 +26,4 @@ class FactorialTest {
         val expectedFactorial = 1L
         assert(getFactorial(input) == expectedFactorial)
     }
-
 }

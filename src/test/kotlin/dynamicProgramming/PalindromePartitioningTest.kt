@@ -1,9 +1,8 @@
 package dynamicProgramming
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class PalindromePartitioningTest {
-
     @Test
     fun palindromePartitioningTest1() {
         val string = "nitik"

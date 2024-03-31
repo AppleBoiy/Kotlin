@@ -15,14 +15,13 @@ import java.util.regex.Pattern
  * @return return true if the text is a Palindrome
  */
 fun isPalindrome(text: String): Boolean {
-
     val normalizedText = text.normalize()
-    for(i in normalizedText.indices)
-        if(normalizedText[i] != normalizedText[normalizedText.length - (i + 1)])
+    for (i in normalizedText.indices)
+        if (normalizedText[i] != normalizedText[normalizedText.length - (i + 1)]) {
             return false
-    return true;
+        }
+    return true
 }
-
 
 fun String.normalize(): String {
     val nfdNormalizedString = Normalizer.normalize(this, Normalizer.Form.NFD)
@@ -32,5 +31,4 @@ fun String.normalize(): String {
         .replaceAll("")
         .toLowerCase()
         .replace(" ", "")
-
 }

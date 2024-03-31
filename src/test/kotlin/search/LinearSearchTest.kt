@@ -1,9 +1,8 @@
 package search
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class LinearSearchTest {
-
     @Test
     fun testLinearSearch1() {
         val array = arrayOf(1, 2, 4, 5, 3, 9, 53)
