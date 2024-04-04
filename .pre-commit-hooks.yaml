@@ -28,3 +28,9 @@
   language: script
   entry: ./scripts/detekt.sh
   files: \.kt
+
+- id: pull
+  name: pull
+  description: Pulls the latest changes from the remote repository
+  language: script
+  entry: ./scripts/git.sh pull
