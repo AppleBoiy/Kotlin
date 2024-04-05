@@ -1,5 +1,16 @@
 package dataStructures
 
+/**
+ * N-dimensional array implementation
+ *
+ * @param T the type of the data
+ * @property dimensions the dimensions of the array
+ * @property data the data of the array
+ * @constructor Creates an array with the specified dimensions
+ *
+ * @sample dataStructures.NDArrayTest.main
+ * @see buildStringRepresentation
+ */
 class NDArray<T : Any>(vararg shape: Int) {
     private val dimensions: IntArray = shape
     private val data: Array<Any>
@@ -35,6 +46,14 @@ class NDArray<T : Any>(vararg shape: Int) {
         return builder.toString()
     }
 
+    /**
+     * Build the string representation of the NDArray
+     * @param data the data to represent
+     * @param dimensions the dimensions of the data
+     * @param builder the string builder to append to
+     * @param depth the current depth of the data
+     * @sample dataStructures.NDArray.toString
+     */
     private fun buildStringRepresentation(
         data: Array<Any>,
         dimensions: IntArray,
