@@ -4,131 +4,116 @@ import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeAll
+import org.junit.jupiter.api.BeforeEach
 
 class SinglyLinkedListTest {
-    companion object {
-        @JvmStatic
-        @BeforeAll
-        fun setUp() {
-            val singlyLinkedList = SinglyLinkedList()
-            singlyLinkedList.insert(1)
-            singlyLinkedList.insert(2)
-            singlyLinkedList.insert(3)
 
-            assertEquals("1 2 3", singlyLinkedList.toString())
+    companion object {
+        private lateinit var node: Node<Int>
+        private lateinit var list: SinglyLinkedList<Int>
+
+        @BeforeAll
+        @JvmStatic
+        fun setup() {
+            list = SinglyLinkedList()
+
+            node = Node(1)
+            node.next = Node(2)
+
+            assertEquals(1, node.data)
+            assertEquals(2, node.next?.data)
+        }
+    }
+
+    @BeforeEach
+    fun init() {
+        list.clear()
+    }
+
+    @Test
+    fun testAppend() {
+        list.append(1) // [1]
+        assertEquals("[1]", list.toString())
+
+        list.append(2) // [1, 2]
+        assertEquals("[1, 2]", list.toString())
+    }
+
+    @Test
+    fun testClear() {
+        list.append(1) // [1]
+        list.append(2) // [1, 2]
+        list.clear() // []
+        assertEquals(0, list.length)
+    }
+
+    @Test
+    fun testGet() {
+        list.append(1) // [1]
+        list.append(2) // [1, 2]
+        assertEquals(1, list[0].data)
+        assertEquals(2, list[1].data)
+    }
+
+    @Test
+    fun testInsert() {
+        list.append(1) // [1]
+        list.append(3) // [1, 3]
+        list.insert(1, 2)
+        assertEquals(2, list[1].data)
+    }
+
+    @Test
+    fun testInsertThrows() {
+        list.append(1) // [1]
+        list.append(2) // [1, 2]
+        assertThrows(IndexOutOfBoundsException::class.java) {
+            list.insert(3, 3)
         }
     }
 
     @Test
-    fun insert() {
-        val singlyLinkedList = SinglyLinkedList()
-        singlyLinkedList.insert(1)
-        singlyLinkedList.insert(2)
-        singlyLinkedList.insert(3)
-
-        assertEquals("1 2 3", singlyLinkedList.toString())
+    fun testRemove() {
+        list.append(1) // [1]
+        list.append(2) // [1, 2]
+        list.append(3) // [1, 2, 3]
+        list.remove(1) // [1, 3]
+        assertEquals(3, list[1].data)
     }
 
     @Test
-    fun insertAtIndex() {
-        val singlyLinkedList = SinglyLinkedList()
-        singlyLinkedList.insert(1)
-        singlyLinkedList.insert(2)
-        singlyLinkedList.insert(3)
-
-        singlyLinkedList.insert(4, 1)
-
-        assertEquals("1 4 2 3", singlyLinkedList.toString())
+    fun testFind() {
+        list.append(1) // [1]
+        list.append(2) // [1, 2]
+        list.append(3) // [1, 2, 3]
+        assertEquals(0, list.find(1))
+        assertEquals(-1, list.find(4))
     }
 
     @Test
-    fun delete() {
-        val singlyLinkedList = SinglyLinkedList()
-        singlyLinkedList.insert(1)
-        singlyLinkedList.insert(2)
-        singlyLinkedList.insert(3)
+    fun testPrepend() {
+        list.prepend(1)  // [1]
+        assertEquals(1, list[0].data)
 
-        singlyLinkedList.delete(2)
-
-        assertEquals("1 3", singlyLinkedList.toString())
+        list.prepend(2)
+        assertEquals(2, list[0].data)
     }
 
     @Test
-    fun search() {
-        val singlyLinkedList = SinglyLinkedList()
-        singlyLinkedList.insert(1)
-        singlyLinkedList.insert(2)
-        singlyLinkedList.insert(3)
+    fun testLength() {
+        assertEquals(0, list.length)
 
-        assertEquals(1, singlyLinkedList.search(2))
+        list.append(1)
+        assertEquals(1, list.length)
+
+        list.append(2)
+        assertEquals(2, list.length)
     }
 
     @Test
-    fun searchNotFound() {
-        val singlyLinkedList = SinglyLinkedList()
-        singlyLinkedList.insert(1)
-        singlyLinkedList.insert(2)
-        singlyLinkedList.insert(3)
-
-        assertEquals(-1, singlyLinkedList.search(4))
-    }
-
-    @Test
-    fun reverse() {
-        val singlyLinkedList = SinglyLinkedList()
-        singlyLinkedList.insert(1)
-        singlyLinkedList.insert(2)
-        singlyLinkedList.insert(3)
-
-        singlyLinkedList.reversed()
-
-        assertEquals("3 2 1", singlyLinkedList.toString())
-    }
-
-    @Test
-    fun sort() {
-        val singlyLinkedList = SinglyLinkedList()
-        singlyLinkedList.insert(3)
-        singlyLinkedList.insert(1)
-        singlyLinkedList.insert(2)
-
-        singlyLinkedList.sorted()
-
-        assertEquals("1 2 3", singlyLinkedList.toString())
-    }
-
-    @Test
-    fun length() {
-        val singlyLinkedList = SinglyLinkedList()
-        singlyLinkedList.insert(1)
-        singlyLinkedList.insert(2)
-        singlyLinkedList.insert(3)
-
-        assertEquals(3, singlyLinkedList.length)
-    }
-
-    @Test
-    fun copy() {
-        val singlyLinkedList = SinglyLinkedList()
-        singlyLinkedList.insert(1)
-        singlyLinkedList.insert(2)
-        singlyLinkedList.insert(3)
-
-        val copiedList = singlyLinkedList.copy()
-
-        assertEquals("1 2 3", copiedList.toString())
-    }
-
-    @Test
-    fun pop() {
-        val singlyLinkedList = SinglyLinkedList()
-        singlyLinkedList.insert(1)
-        singlyLinkedList.insert(2)
-        singlyLinkedList.insert(3)
-
-        val popped = singlyLinkedList.pop()
-
-        assertEquals("2 3", singlyLinkedList.toString())
-        assertEquals(1, popped)
+    fun testToString() {
+        list.append(1)
+        list.append(2)
+        assertEquals("[1, 2]", list.toString())
     }
 }
