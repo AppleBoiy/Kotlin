@@ -4,6 +4,7 @@
   * Main
     * Kotlin
       * Datastructures
+        * [Ndarray](https://github.com/AppleBoiy/Kotlin/blob/master/src/main/kotlin/dataStructures/NDArray.kt)
         * [Singlylinkedlist](https://github.com/AppleBoiy/Kotlin/blob/master/src/main/kotlin/dataStructures/SinglyLinkedList.kt)
       * Dynamicprogramming
         * [Assemblylinescheduling](https://github.com/AppleBoiy/Kotlin/blob/master/src/main/kotlin/dynamicProgramming/assemblyLineScheduling.kt)
@@ -42,6 +43,7 @@
         * [Timsort](https://github.com/AppleBoiy/Kotlin/blob/master/src/main/kotlin/sort/TimSort.kt)
   * Test
       * Datastructures
+        * [Ndarraytest](https://github.com/AppleBoiy/Kotlin/blob/master/src/test/kotlin/dataStructures/NDArrayTest.kt)
         * [Singlylinkedlisttest](https://github.com/AppleBoiy/Kotlin/blob/master/src/test/kotlin/dataStructures/SinglyLinkedListTest.kt)
       * Dynamicprogramming
         * [Assemblylineschedulingtest](https://github.com/AppleBoiy/Kotlin/blob/master/src/test/kotlin/dynamicProgramming/AssemblyLineSchedulingTest.kt)
