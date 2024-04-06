@@ -9,10 +9,10 @@ repos:
       - id: end-of-file-fixer
 
   - repo: https://github.com/AppleBoiy/Kotlin.git
-    rev: 2ae4287bc8367dfe82c8d785b59af6751166c3df
+    rev: 7a2c662cbc5a68375cb9069146a59a1c77848b77
     hooks:
       - id: mvn-verify # it does not accept arguments
       - id: mvn-compile
       - id: mvn-test # it does not accept arguments
-#      - id: test
+      - id: test
       - id: pull
