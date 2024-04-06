@@ -20,32 +20,6 @@ class NDArray<T : Any>(vararg shape: Int) {
         data = Array(size) { 0 }
     }
 
-    private fun offset(indices: IntArray): Int {
-        require(indices.size == dimensions.size) { "Invalid number of indices" }
-        require(indices.zip(dimensions).all { (index, dim) -> index in 0 until dim }) {
-            "Index out of bounds"
-        }
-
-        return indices.zip(dimensions).fold(0) { acc, (index, dim) -> acc * dim + index }
-    }
-
-    operator fun get(vararg indices: Int): T {
-        val offset = offset(indices)
-
-        @Suppress("UNCHECKED_CAST") return data[offset] as T
-    }
-
-    operator fun set(vararg indices: Int, value: T) {
-        val offset = offset(indices)
-        data[offset] = value
-    }
-
-    override fun toString(): String {
-        val builder = StringBuilder()
-        buildStringRepresentation(data, dimensions, builder, 0)
-        return builder.toString()
-    }
-
     /**
      * Build the string representation of the NDArray
      * @param data the data to represent
@@ -81,4 +55,33 @@ class NDArray<T : Any>(vararg shape: Int) {
             builder.append("]")
         }
     }
+
+    private fun offset(indices: IntArray): Int {
+        require(indices.size == dimensions.size) { "Invalid number of indices" }
+        require(
+            indices.zip(dimensions).all { (index, dim) -> index in 0 until dim }
+        ) { "Index out of bounds" }
+
+        return indices.zip(dimensions).fold(0) { acc, (index, dim) -> acc * dim + index }
+    }
+
+
+    operator fun get(vararg indices: Int): T {
+        val offset = offset(indices)
+
+        @Suppress("UNCHECKED_CAST") return data[offset] as T
+    }
+
+    operator fun set(vararg indices: Int, value: T) {
+        val offset = offset(indices)
+        data[offset] = value
+    }
+
+    override fun toString(): String {
+        val builder = StringBuilder()
+        buildStringRepresentation(data, dimensions, builder, 0)
+        return builder.toString()
+    }
+
+
 }

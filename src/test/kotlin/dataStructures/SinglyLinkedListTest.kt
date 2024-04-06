@@ -31,6 +31,54 @@ class SinglyLinkedListTest {
     }
 
     @Test
+    fun testNode() {
+        assertEquals(1, node.data)
+        assertEquals(2, node.next?.data)
+    }
+
+    @Test
+    fun testNodeNext() {
+        assertEquals(2, node.next?.data)
+    }
+
+    @Test
+    fun testNodeNextNext() {
+        assertEquals(null, node.next?.next)
+    }
+
+    @Test
+    fun testIsEmpty() {
+        assertEquals(true, list.isEmpty())
+        list.append(1)
+        assertEquals(false, list.isEmpty())
+    }
+
+    @Test
+    fun testFromArray() {
+        val list = SinglyLinkedList.fromArray(arrayOf(1, 2, 3))
+        assertEquals("[1, 2, 3]", list.toString())
+    }
+
+    @Test
+    fun testFromList() {
+        val list = SinglyLinkedList.fromList(listOf(1, 2, 3))
+        assertEquals("[1, 2, 3]", list.toString())
+    }
+
+    @Test
+    fun testFromStringInt() {
+        val list = SinglyLinkedList.fromString<Int>("123")
+        assertEquals("[1, 2, 3]", list.toString())
+    }
+
+    @Test
+    fun testFromStringChar() {
+        val list = SinglyLinkedList.fromString<Char>("abc")
+        assertEquals("[a, b, c]", list.toString())
+    }
+
+
+    @Test
     fun testAppend() {
         list.append(1) // [1]
         assertEquals("[1]", list.toString())
@@ -108,6 +156,96 @@ class SinglyLinkedListTest {
 
         list.append(2)
         assertEquals(2, list.length)
+    }
+
+    @Test
+    fun testSortInt() {
+        list.append(3)
+        list.append(2)
+        list.append(1)
+        // Requires Comparator
+        list.sort { a, b -> a - b }
+        assertEquals("[1, 2, 3]", list.toString())
+    }
+
+    @Test
+    fun testSortString() {
+        val list = SinglyLinkedList<String>()
+        list.append("c")
+        list.append("b")
+        list.append("a")
+        // Requires Comparator
+        list.sort { a, b -> a.compareTo(b) }
+        assertEquals("[a, b, c]", list.toString())
+    }
+
+    @Test
+    fun testSortChar() {
+        val list = SinglyLinkedList<Char>()
+        list.append('c')
+        list.append('b')
+        list.append('a')
+        // Requires Comparator
+        list.sort { a, b -> a.compareTo(b) }
+        assertEquals("[a, b, c]", list.toString())
+    }
+
+    @Test
+    fun testSortDouble() {
+        val list = SinglyLinkedList<Double>()
+        list.append(3.0)
+        list.append(2.0)
+        list.append(1.0)
+        // Requires Comparator
+        list.sort { a, b -> a.compareTo(b) }
+        assertEquals("[1.0, 2.0, 3.0]", list.toString())
+    }
+
+    @Test
+    fun testSortedInt() {
+        list.append(3)
+        list.append(2)
+        list.append(1)
+        val sortedList = SinglyLinkedList.sorted(list)
+        assertEquals("[1, 2, 3]", sortedList.toString())
+    }
+
+    @Test
+    fun testSortedString() {
+        val list = SinglyLinkedList<String>()
+        list.append("c")
+        list.append("b")
+        list.append("a")
+        val sortedList = SinglyLinkedList.sorted(list)
+        assertEquals("[a, b, c]", sortedList.toString())
+    }
+
+    @Test
+    fun testSortedChar() {
+        val list = SinglyLinkedList<Char>()
+        list.append('c')
+        list.append('b')
+        list.append('a')
+        val sortedList = SinglyLinkedList.sorted(list)
+        assertEquals("[a, b, c]", sortedList.toString())
+    }
+
+    @Test
+    fun testSortedDouble() {
+        val list = SinglyLinkedList<Double>()
+        list.append(3.0)
+        list.append(2.0)
+        list.append(1.0)
+        val sortedList = SinglyLinkedList.sorted(list)
+        assertEquals("[1.0, 2.0, 3.0]", sortedList.toString())
+    }
+
+    @Test
+    fun testCopy() {
+        list.append(1)
+        list.append(2)
+        val newList = list.copy()
+        assertEquals("[1, 2]", newList.toString())
     }
 
     @Test
