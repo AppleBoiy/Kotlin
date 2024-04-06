@@ -34,3 +34,9 @@
   description: Pulls the latest changes from the remote repository
   language: script
   entry: ./scripts/git.sh pull
+
+- id: test
+  name: test with JUnit
+  description: Runs the tests
+  language: script
+  entry: ./scripts/test.sh
